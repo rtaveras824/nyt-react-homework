@@ -3,7 +3,6 @@ import React from 'react';
 class Results extends React.Component {
 	constructor(props) {
 		super(props);
-		
 	}
 
 	render () {
@@ -11,14 +10,15 @@ class Results extends React.Component {
 			<div>
 				<p>This is the results</p>
 				{
-					this.props.savedArticles.map(function(articles, index) {
+					this.props.resultArticles.map(function(articles, index) {
 						return (
 							<div key={index}>
-								<h2>{articles.title}</h2>
-								<p>{articles.summary}</p>
+								<h2>{articles.headline.main}</h2>
+								<p>{articles.lead_paragraph}</p>
+								<button type="button" onClick={this.props.saveArticle.bind(this, index)}>Save Article</button>
 							</div>
 						)
-					})
+					}.bind(this))
 				}
 			</div>
 		)

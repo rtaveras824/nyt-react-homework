@@ -33,6 +33,7 @@ app.get('/api', function(req, res) {
 		if (err) {
 			console.log('Error');
 		} else {
+			console.log(docs);
 			res.send(docs);
 		}
 	});
@@ -47,6 +48,16 @@ app.post('/api', function(req, res) {
 		}
 	});
 });
+
+app.post('/delete/:id', function(req, res) {
+	Article.remove({ _id: req.params.id }, function(err) {
+		if (err) {
+			console.log(err);
+		} else {
+			res.send('Article Deleted');
+		}
+	})
+})
 
 app.listen(PORT, function() {
 	console.log('Server listening on port', PORT);
