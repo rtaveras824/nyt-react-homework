@@ -21751,7 +21751,11 @@
 								null,
 								articles.lead_paragraph
 							),
-							_react2.default.createElement("button", { type: "button", onClick: this.props.saveArticle.bind(this, index) })
+							_react2.default.createElement(
+								"button",
+								{ type: "button", onClick: this.props.saveArticle.bind(this, index) },
+								"Save Article"
+							)
 						);
 					}.bind(this))
 				);
