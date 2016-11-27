@@ -15,7 +15,9 @@ class Results extends React.Component {
 							<div key={index}>
 								<h2>{articles.headline.main}</h2>
 								<p>{articles.lead_paragraph}</p>
-								<button type="button" onClick={this.props.saveArticle.bind(this, index)}>Save Article</button>
+								<button type="button" onClick={this.props.saveArticle.bind(this, index)}>
+									
+								</button>
 							</div>
 						)
 					}.bind(this))

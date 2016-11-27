@@ -21560,7 +21560,7 @@
 			value: function saveArticle(index) {
 				var article = this.state.results[index];
 				console.log('article to save', article);
-				_helper2.default.saveArticle(article.headline.main, article.leading_paragraph).then(function (data) {
+				_helper2.default.saveArticle(article.headline.main, article.lead_paragraph).then(function (data) {
 					_helper2.default.getArticles().then(function (results) {
 						if (results.data != this.state.saved) {
 							this.setState({
@@ -21751,11 +21751,7 @@
 								null,
 								articles.lead_paragraph
 							),
-							_react2.default.createElement(
-								"button",
-								{ type: "button", onClick: this.props.saveArticle.bind(this, index) },
-								"Save Article"
-							)
+							_react2.default.createElement("button", { type: "button", onClick: this.props.saveArticle.bind(this, index) })
 						);
 					}.bind(this))
 				);
@@ -21815,6 +21811,7 @@
 						return _react2.default.createElement(
 							"div",
 							{ key: index },
+							console.log(articles),
 							_react2.default.createElement(
 								"h2",
 								null,

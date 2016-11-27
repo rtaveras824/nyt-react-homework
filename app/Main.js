@@ -49,7 +49,7 @@ class Main extends React.Component {
 	saveArticle(index) {
 		var article = this.state.results[index];
 		console.log('article to save', article);
-		helpers.saveArticle(article.headline.main, article.leading_paragraph)
+		helpers.saveArticle(article.headline.main, article.lead_paragraph)
 			.then(function(data) {
 				helpers.getArticles()
 					.then(function(results) {

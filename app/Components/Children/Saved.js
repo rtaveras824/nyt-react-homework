@@ -13,6 +13,7 @@ class Saved extends React.Component {
 					this.props.savedArticles.map(function(articles, index) {
 						return (
 							<div key={index}>
+							{console.log(articles)}
 								<h2>{articles.title}</h2>
 								<p>{articles.summary}</p>
 								<button type="button" onClick={this.props.deleteArticle.bind(this, index)}>Delete</button>

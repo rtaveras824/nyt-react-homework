@@ -14,7 +14,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 app.use(express.static('./public'));
 
-mongoose.connect('mongodb://localhost/newyorktimes');
+//mongoose.connect('mongodb://localhost/newyorktimes');
+mongoose.connect('mongodb://heroku_vtc5g08t:i2l47or091bmmvd4idpgmn07ho@ds111718.mlab.com:11718/heroku_vtc5g08t');
 
 var db = mongoose.connection;
 
@@ -40,7 +41,7 @@ app.get('/api', function(req, res) {
 });
 
 app.post('/api', function(req, res) {
-	Article.create({ 'title': req.body.title, 'summary': req.body.description }, function(err) {
+	Article.create({ 'title': req.body.title, 'summary': req.body.summary }, function(err) {
 		if (err) {
 			console.log(err);
 		} else {
